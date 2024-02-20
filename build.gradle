@@ -22,7 +22,7 @@ repositories {
 }
 
 java {
-    group = 'com.hei.sary'
+    group = 'school.hei.sary'
     sourceCompatibility = '17'
     targetCompatibility = '17'
 }
@@ -130,6 +130,6 @@ dependencies {
     testImplementation 'org.testcontainers:junit-jupiter:1.19.1'
     testImplementation 'org.junit-pioneer:junit-pioneer:2.2.0'
 
-
+implementation 'com.twelvemonkeys.imageio:imageio-jpeg:3.10.1'
 
 }

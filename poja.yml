@@ -19,5 +19,6 @@ with_gen_clients: 'false'
 with_own_vpc: 'true'
 with_publish_to_npm_registry: 'false'
 with_snapstart: 'false'
+with_swagger_ui: 'false'
 worker_batch: 5
 worker_memory: 512
