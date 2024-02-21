@@ -14,12 +14,12 @@ public class SaryController {
 
   @Autowired private SaryService saryService;
 
-  @PostMapping("/uploadSary/{id}")
-  public String uploadBlackAndWhiteSary(
-      @PathVariable String id, @RequestParam(name = "sary") File sary) {
-
-    return saryService.uploadTransformedImage(id, sary);
-  }
+  //  @PostMapping("/uploadSary/{id}")
+  //  public String uploadBlackAndWhiteSary(
+  //      @PathVariable String id, @RequestParam(name = "sary") File sary) {
+  //
+  //    return saryService.uploadTransformedImage(id, sary);
+  //  }
 
   @GetMapping("/operations")
   public ResponseEntity<List<OperationSary>> getAllOperations() {
