@@ -131,5 +131,6 @@ dependencies {
     testImplementation 'org.junit-pioneer:junit-pioneer:2.2.0'
 
 implementation 'com.twelvemonkeys.imageio:imageio-jpeg:3.10.1'
+implementation 'net.imagej:ij:1.54h'
 
 }
