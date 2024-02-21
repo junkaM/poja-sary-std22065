@@ -13,13 +13,13 @@ import lombok.Setter;
 @Getter
 @Setter
 public class OperationSary {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
-    private String name;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private String id;
 
-    public OperationSary(String name) {
-        this.name = name;
-    }
+  private String name;
+
+  public OperationSary(String name) {
+    this.name = name;
+  }
 }
-
