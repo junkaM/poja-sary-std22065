@@ -1,25 +1,16 @@
 package school.hei.sary.repository.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.sql.Timestamp;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@NoArgsConstructor
 @Getter
 @Setter
 public class OperationSary {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private String id;
+  @Id private String id;
 
-  private String name;
-
-  public OperationSary(String name) {
-    this.name = name;
-  }
+  @Column(name = "transformation_timestamp")
+  private Timestamp operationTimestamp;
 }

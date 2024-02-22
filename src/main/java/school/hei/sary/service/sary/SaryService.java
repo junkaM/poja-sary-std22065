@@ -7,7 +7,6 @@ import ij.ImagePlus;
 import ij.process.ImageConverter;
 import java.io.*;
 import java.time.Duration;
-import java.util.List;
 import javax.imageio.ImageIO;
 import lombok.AllArgsConstructor;
 import org.apache.commons.io.FilenameUtils;
@@ -15,16 +14,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import school.hei.sary.file.BucketComponent;
-import school.hei.sary.repository.SaryRepository;
-import school.hei.sary.repository.model.OperationSary;
 
 @Service
 @AllArgsConstructor
 public class SaryService {
 
   @Autowired private BucketComponent bucketComponent;
-
-  private final SaryRepository saryRepository;
+  private final String directory = "sary/";
 
   public File ConvertToBlackAndWhite(String name, File saryOriginal) throws IOException {
 
@@ -57,14 +53,5 @@ public class SaryService {
     bucketComponent.upload(blackandWhiteImage, bucketKeyTransformedImage);
 
     return bucketComponent.presign(bucketKeyTransformedImage, Duration.ofMinutes(30)).toString();
-  }
-
-  public List<OperationSary> getAllOperations() {
-    return saryRepository.findAll();
-  }
-
-  private void saveOperation(String name) {
-    OperationSary operation = new OperationSary(name);
-    saryRepository.save(operation);
   }
 }
